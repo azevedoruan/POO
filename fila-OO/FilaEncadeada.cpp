@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 class Fila
 {
 private:
@@ -17,7 +15,6 @@ public:
         qtde = 0;
         inicio = NULL;
         fim = NULL;
-        printf("fila criada\n");
     }
 
     ~Fila()
@@ -30,8 +27,6 @@ public:
             delete aux;
             aux = aux2;
         }
-
-        printf("destruido todos os nos da fila\n");
     }
 
     int tamanho() {
@@ -57,16 +52,37 @@ public:
         return true;
     }
 
-    bool remover(int *saida)
+    bool remover()
     {
         if (tamanho() <= 0)
             return false;
 
-        *saida = inicio->valor;
         No* lixo = inicio;
         inicio = inicio->prox;
         delete lixo;
         qtde--;
         return true;
     }
+
+    int primeiroNaFila()
+    {
+        return inicio->valor;
+    }
+
+    int ultimoNaFila()
+    {
+        return fim->valor;
+    }
+
+    // TODO
+    /*bool verifica(int valor)
+    {
+        
+
+        No* aux = inicio;
+        while (aux != NULL)
+        {
+
+        }
+    }*/
 };
