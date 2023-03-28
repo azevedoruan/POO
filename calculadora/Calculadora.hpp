@@ -2,22 +2,32 @@
 
 class Button {
 public:
-    virtual void press(const char) = 0;
+    Button();
+    ~Button();
+    void press(const char);
 };
 
 class Keyboard {
 private:
-    Button* buttons;
+    Button** buttons;
 public:
-
+    Keyboard();
+    ~Keyboard();
+    Button** getButtons();
+    Button* findButton(const char);
+    void send();
 };
 
 class Cpu {
-
+public:
+    Cpu();
+    ~Cpu();
 };
 
 class Display {
 public:
+    Display();
+    ~Display();
     void show();
 };
 
