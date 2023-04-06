@@ -1,4 +1,5 @@
 #include "DisplayRuan.hpp"
+#include "DisplayExceptionRuan.hpp"
 
 #include<stdio.h>
 
@@ -17,8 +18,14 @@ void DisplayRuan::addDigit(Digit digit) {
         case Digit::TWO:
             printf("▇▇▇▇\n   ▇\n▇▇▇▇\n▇   \n▇▇▇▇\n");
             break;
+        case Digit::THREE:
+            printf("▇▇▇▇\n   ▇\n ▇▇▇\n   ▇\n▇▇▇▇\n");
+            break;
+        case Digit::FOUR:
+            printf("▇▇▇▇\n   ▇\n ▇▇▇\n   ▇\n▇▇▇▇\n");
+            break;
         default:
-            printf("Error!");
+            throw DisplayExceptionRuan("Digit not implemented");
     }
 }
 
