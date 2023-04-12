@@ -6,7 +6,6 @@
 
 void calculatorTest()
 {
-
     try
     {
         DisplayRuan d1;
@@ -14,8 +13,12 @@ void calculatorTest()
         d1.addDigit(Digit::ONE);
         d1.addDigit(Digit::TWO);
         d1.addDigit(Digit::THREE);
-        d1.addDigit(Digit::FOUR);
+        /*d1.addDigit(Digit::FOUR);
         d1.addDigit(Digit::FIVE);
+        d1.addDigit(Digit::SIX);
+        d1.addDigit(Digit::SEVEN);
+        d1.addDigit(Digit::EIGTH);
+        d1.addDigit(Digit::NINE);*/
     }
     catch (CalculatorError e)
     {
@@ -27,7 +30,6 @@ void calculatorTest()
 
 int main()
 {
-
     calculatorTest();
 
     return 0;

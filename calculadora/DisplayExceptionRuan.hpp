@@ -1,7 +1,12 @@
+#ifndef DISPLAY_EXCEPTION_H
+#define DISPLAY_EXCEPTION_H
+
 #include "Calculator.hpp"
 
 class DisplayExceptionRuan : public CalculatorError {
 public:
     DisplayExceptionRuan(char const*);
-    char const* getMessage();
+    virtual char const *getMessage();
 };
+
+#endif
