@@ -1,7 +1,8 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-enum Digit { ZERO = 0, ONE = 1, TWO = 2, THREE = 3, FOUR = 4, FIVE = 5, SIX = 6, SEVEN = 7, EIGTH = 8, NINE = 9, NULLABLE = 10};
+enum Digit { ZERO = 0, ONE = 1, TWO = 2, THREE = 3, FOUR = 4, FIVE = 5, SIX = 6, SEVEN = 7, EIGTH = 8, NINE = 9 };
+enum Signal { POSITIVE, NEGATIVE };
 enum Operator { SUM, SUBTRACTION, DIVISION, MULTIPLICATION };
 enum Control { EQUAL, DECIMAL_SEPARATOR, CLEAR_ERROR, OFF, MEMORY_READ_CLEAR, MEMORY_SUM, MEMORY_SUBTRACTION };
 
@@ -49,6 +50,7 @@ class Cpu {
 class Display {
    public:
     virtual void addDigit(Digit) = 0;
+    virtual void setSignal(Signal) = 0;
     virtual void addDecimalSeparator() = 0;
     virtual void clear() = 0;
 };
