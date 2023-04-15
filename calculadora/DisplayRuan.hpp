@@ -1,7 +1,11 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
+#include<stdio.h>
+
 #include "Calculator.hpp"
+#include "DisplayExceptionRuan.hpp"
+#include "Console.hpp"
 
 #define MAX_CHARACTERS 8
 

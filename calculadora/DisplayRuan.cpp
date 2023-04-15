@@ -1,8 +1,4 @@
-#include<stdio.h>
-
 #include "DisplayRuan.hpp"
-#include "DisplayExceptionRuan.hpp"
-#include "Console.hpp"
 
 DisplayRuan::DisplayRuan() {
     clear();

@@ -40,19 +40,20 @@ class KeyControl : public Key {
     virtual Control getControl() = 0;
 };
 
-class Cpu {
-   public:
-    virtual void receive(Digit) = 0;
-    virtual void receive(Operator) = 0;
-    virtual void receive(Control) = 0;
-};
-
 class Display {
    public:
     virtual void addDigit(Digit) = 0;
     virtual void setSignal(Signal) = 0;
     virtual void addDecimalSeparator() = 0;
     virtual void clear() = 0;
+};
+
+class Cpu {
+   public:
+    virtual void receive(Digit) = 0;
+    virtual void receive(Operator) = 0;
+    virtual void receive(Control) = 0;
+    virtual void setDisplay(Display*) = 0;
 };
 
 /* Responsabilidade: montar uma calculadora */
