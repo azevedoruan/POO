@@ -3,6 +3,7 @@
 
 #include "Calculator.hpp"
 #include "DisplayRuan.hpp"
+#include "CpuRuan.hpp"
 
 void calculatorTest()
 {
@@ -34,9 +35,24 @@ void calculatorTest()
     }
 }
 
+void cpuTest() {
+    CpuRuan cpu1;
+    DisplayRuan display1;
+    cpu1.setDisplay(&display1);
+
+    cpu1.receive(Digit::TWO);
+    //cpu1.receive(Digit::THREE);
+    cpu1.receive(Operator::SUM);
+    cpu1.receive(Digit::ONE);
+    cpu1.receive(Digit::TWO);
+    cpu1.receive(Control::EQUAL);
+    //cpu1.receive(Operator::SUM);
+}
+
 int main()
 {
-    calculatorTest();
+    //calculatorTest();
+    cpuTest();
 
     return 0;
 }

@@ -11,8 +11,8 @@ void DisplayRuan::addDigit(Digit digit) {
     if (currentPos >= MAX_CHARACTERS)
         return;
 
-    if (currentPos == 0 && digit == Digit::ZERO)
-        return;
+    /*if (currentPos == 0 && digit == Digit::ZERO)
+        return;*/
 
     Console::clearScreen();
     digits[currentPos] = digit;
