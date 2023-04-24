@@ -12,9 +12,7 @@ class DisplayRuan : public Display {
 private:
     char currentPos;
     Digit digits[MAX_CHARACTERS];
-    Signal currentSignal;
     void printDigit(int, char const*, char const*, char const*, char const*, char const*);
-    void printSignal();
 public:
     DisplayRuan();
     ~DisplayRuan();
