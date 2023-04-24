@@ -53,7 +53,7 @@ void DisplayRuan::addDigit(Digit digit) {
                 printDigit(pos, "▇▇▇▇", "▇  ▇", "▇▇▇▇", "   ▇", "▇▇▇▇");
                 break;
             default:
-                throw DisplayExceptionRuan("Digit not implemented");
+                throw CalculatorError("Digit not implemented");
         }
     }
     currentPos++;

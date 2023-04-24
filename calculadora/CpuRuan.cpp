@@ -24,7 +24,7 @@ void CpuRuan::receive(Control control) {
         calculateResult();
         break;
     default:
-        throw new CalculatorError("Caractere de controle nao reconhecido");
+        throw CalculatorError("Caractere de controle nao reconhecido");
     }
 }
 
@@ -72,7 +72,7 @@ void CpuRuan::calculateResult() {
         result = numA / numB;
         break;
     default:
-        throw new CalculatorError("Caractere operador nao reconhecido");
+        throw CalculatorError("Caractere operador nao reconhecido");
     }
 
     aCount = 0;

@@ -4,7 +4,6 @@
 #include<stdio.h>
 
 #include "Calculator.hpp"
-#include "DisplayExceptionRuan.hpp" // não é preciso do "DisplayExceptionRuan.hpp". Usar o CalculatorError do arquivo "Calculator.hpp".
 #include "Console.hpp"
 
 #define MAX_CHARACTERS 8
