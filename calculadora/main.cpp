@@ -32,9 +32,11 @@ void cpuTest() {
     DisplayRuan display1;
     cpu1.setDisplay(&display1);
 
-    cpu1.receive(Digit::ZERO);
-    cpu1.receive(Operator::SUBTRACTION);
     cpu1.receive(Digit::TWO);
+    cpu1.receive(Operator::SUBTRACTION);
+    cpu1.receive(Digit::FIVE);
+    cpu1.receive(Operator::SUM);
+    cpu1.receive(Digit::SIX);
     cpu1.receive(Operator::SUBTRACTION);
 }
 
@@ -44,7 +46,7 @@ int main()
         //calculatorTest();
         cpuTest();
     } catch (CalculatorError e) {
-        char string[50] = "Erro: ";
+        char string[50] = "Error: ";
         strcat(string, e.getMessage());
         printf("%s\n", string);
     }

@@ -10,7 +10,7 @@ void DisplayRuan::addDigit(Digit digit) {
     if (currentPos >= MAX_CHARACTERS)
         return;
 
-    Console::clearScreen();
+    //Console::clearScreen();
     digits[currentPos] = digit;
 
     for (int i = 0; i <= currentPos; i++) {

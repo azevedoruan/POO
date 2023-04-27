@@ -15,6 +15,7 @@ private:
     Digit b[MAX_CHARACTERS];
     int aCount = 0;
     int bCount = 0;
+    Signal currentSignal = Signal::POSITIVE;
     Operator currentOperator;
     bool operatorDefined = false;
     void addDigitInExpressionA(Digit);

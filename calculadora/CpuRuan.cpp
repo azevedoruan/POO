@@ -10,12 +10,15 @@ void CpuRuan::receive(Digit digit) {
     }
 }
 
-void CpuRuan::receive(Operator op) {    
-    currentOperator = op;
-    if (operatorDefined && bCount > 0)
+void CpuRuan::receive(Operator op) { 
+    if (aCount == 0)
+        currentSignal = Signal::NEGATIVE;
+   
+    if (operatorDefined)
         calculateResult();
-    else
-        operatorDefined = true;
+    
+    operatorDefined = true;
+    currentOperator = op;
 }
 
 void CpuRuan::receive(Control control) {
@@ -53,10 +56,12 @@ void CpuRuan::addDigitInExpressionB(Digit digit) {
 }
 
 void CpuRuan::calculateResult() {
-
     int numA = digitToInt(a, aCount);
     int numB = digitToInt(b, bCount);
     int result = 0;
+
+    if (currentSignal == Signal::NEGATIVE)
+        numA *= -1;
 
     switch (currentOperator) {
     case Operator::SUM: 
@@ -79,8 +84,16 @@ void CpuRuan::calculateResult() {
     bCount = 0;
     display->clear();
 
+    if (result < 0) {
+        result *= -1;
+        currentSignal = Signal::NEGATIVE;
+        display->setSignal(currentSignal);
+    }
+
     for (int i = MAX_CHARACTERS - 1; i >= 0; i--)
         addDigitInExpressionA(intToDigit(result, i));
+    
+    printf("%d\n", result);
 }
 
 int CpuRuan::digitToInt(Digit const* digits, int count) {
