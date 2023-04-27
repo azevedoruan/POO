@@ -10,9 +10,9 @@ void CpuRuan::receive(Digit digit) {
     }
 }
 
-void CpuRuan::receive(Operator op) {
+void CpuRuan::receive(Operator op) {    
     currentOperator = op;
-    if (operatorDefined)
+    if (operatorDefined && bCount > 0)
         calculateResult();
     else
         operatorDefined = true;
@@ -78,6 +78,7 @@ void CpuRuan::calculateResult() {
     aCount = 0;
     bCount = 0;
     display->clear();
+
     for (int i = MAX_CHARACTERS - 1; i >= 0; i--)
         addDigitInExpressionA(intToDigit(result, i));
 }
