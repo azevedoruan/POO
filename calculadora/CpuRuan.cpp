@@ -83,17 +83,19 @@ void CpuRuan::calculateResult() {
     aCount = 0;
     bCount = 0;
     display->clear();
+    printf("%d\n", result); // debug
 
     if (result < 0) {
         result *= -1;
         currentSignal = Signal::NEGATIVE;
-        display->setSignal(currentSignal);
+    } else {
+        currentSignal = Signal::POSITIVE;
     }
+    
+    display->setSignal(currentSignal);
 
     for (int i = MAX_CHARACTERS - 1; i >= 0; i--)
         addDigitInExpressionA(intToDigit(result, i));
-    
-    printf("%d\n", result);
 }
 
 int CpuRuan::digitToInt(Digit const* digits, int count) {
