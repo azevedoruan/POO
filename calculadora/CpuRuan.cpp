@@ -74,6 +74,8 @@ void CpuRuan::calculateResult() {
         result = numA * numB;
         break;
     case Operator::DIVISION:
+        if(numB == 0)
+            throw CalculatorError("Impossivel dividir por zero");
         result = numA / numB;
         break;
     default:

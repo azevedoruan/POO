@@ -33,12 +33,10 @@ void cpuTest() {
     cpu1.setDisplay(&display1);
 
     cpu1.receive(Digit::TWO);
-    cpu1.receive(Operator::SUBTRACTION);
-    cpu1.receive(Digit::FIVE);
     cpu1.receive(Digit::ZERO);
-    cpu1.receive(Operator::SUM);
-    cpu1.receive(Digit::FIVE);
-    cpu1.receive(Operator::SUM);
+    cpu1.receive(Operator::DIVISION);
+    cpu1.receive(Digit::ZERO);
+    cpu1.receive(Operator::MULTIPLICATION);
 }
 
 int main()
