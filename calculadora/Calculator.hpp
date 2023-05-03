@@ -6,16 +6,20 @@ enum Signal { POSITIVE, NEGATIVE };
 enum Operator { SUM, SUBTRACTION, DIVISION, MULTIPLICATION };
 enum Control { EQUAL, DECIMAL_SEPARATOR, CLEAR_ERROR, OFF, MEMORY_READ_CLEAR, MEMORY_SUM, MEMORY_SUBTRACTION };
 
+typedef char const* Symbol;
+
 class Key;
 class Keyboard {
    public:
     virtual void receive(Digit) = 0;
     virtual void receive(Operator) = 0;
     virtual void receive(Control) = 0;
-    virtual Key *getKey(Digit) = 0;
-    virtual Key *getKey(Operator) = 0;
-    virtual Key *getKey(Control) = 0;
-    virtual void addKey(Key *) = 0;
+    virtual Key* getKey(Digit) = 0;
+    virtual Key* getKey(Operator) = 0;
+    virtual Key* getKey(Control) = 0;
+    virtual Key* getKey(Symbol) = 0;
+    virtual void add(Key*) = 0;
+    virtual void setCpu(Cpu*) = 0;
 };
 
 class Key {

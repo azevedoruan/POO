@@ -2,5 +2,6 @@
     "C_Cpp.vcFormat.newLine.scopeBracesOnSeparateLines": false,
     "files.associations": {
         "limits": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/clang"
 }
