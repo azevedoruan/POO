@@ -52,12 +52,12 @@ void calculatorTest() {
     calculator.setDisplay(&display);
     calculator.setKeyboard(&keyboard);
 
-    calculator.getKeyboard()->getKey("-")->press();
-    calculator.getKeyboard()->getKey("2")->press();
+    calculator.getKeyboard()->getKey("4")->press();
     calculator.getKeyboard()->getKey("*")->press();
-    calculator.getKeyboard()->getKey("3")->press();
+    calculator.getKeyboard()->getKey("0")->press();
     calculator.getKeyboard()->getKey("+")->press();
-    calculator.getKeyboard()->getKey("6")->press();
+    calculator.getKeyboard()->getKey("1")->press();
+    calculator.getKeyboard()->getKey("4")->press();
     calculator.getKeyboard()->getKey("=")->press();
 }
 

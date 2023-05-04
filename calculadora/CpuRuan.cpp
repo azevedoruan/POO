@@ -24,7 +24,8 @@ void CpuRuan::receive(Operator op) {
 void CpuRuan::receive(Control control) {
     switch (control) {
     case Control::EQUAL:
-        calculateResult();
+        if (operatorDefined == true)
+            calculateResult();
         break;
     default:
         throw CalculatorError("Control not implemented");
@@ -85,6 +86,11 @@ void CpuRuan::calculateResult() {
     aCount = 0;
     bCount = 0;
     display->clear();
+
+    if (result == 0) {
+        display->clear();
+        return;
+    }
 
     if (result < 0) {
         result *= -1;
