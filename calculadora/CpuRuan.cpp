@@ -27,7 +27,7 @@ void CpuRuan::receive(Control control) {
         calculateResult();
         break;
     default:
-        throw CalculatorError("Caractere de controle nao reconhecido");
+        throw CalculatorError("Control not implemented");
     }
 }
 
@@ -75,17 +75,16 @@ void CpuRuan::calculateResult() {
         break;
     case Operator::DIVISION:
         if(numB == 0)
-            throw CalculatorError("Impossivel dividir por zero");
+            throw CalculatorError("impossible to divide by zero");
         result = numA / numB;
         break;
     default:
-        throw CalculatorError("Caractere operador nao reconhecido");
+        throw CalculatorError("Operator not implemented");
     }
 
     aCount = 0;
     bCount = 0;
     display->clear();
-    printf("%d\n", result); // debug
 
     if (result < 0) {
         result *= -1;

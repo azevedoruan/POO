@@ -9,8 +9,7 @@ DisplayRuan::~DisplayRuan() {}
 void DisplayRuan::addDigit(Digit digit) {
     if (currentPos >= MAX_CHARACTERS)
         return;
-
-    //Console::clearScreen();
+        
     digits[currentPos] = digit;
 
     for (int i = 0; i <= currentPos; i++) {
@@ -62,7 +61,7 @@ void DisplayRuan::setSignal(Signal signal) {
 }
 
 void DisplayRuan::addDecimalSeparator() {
-    //TODO...
+    throw CalculatorError("Decimal separator not implemented in DisplayRuan");
 }
 
 void DisplayRuan::clear() {
@@ -72,6 +71,7 @@ void DisplayRuan::clear() {
         digits[i] = Digit::ZERO;
     }
     printDigit(7, "▇▇▇▇", "▇  ▇", "▇  ▇", "▇  ▇", "▇▇▇▇");
+    Console::setCursor(7, 1);
 }
 
 void DisplayRuan::printDigit(int index, char const* row1, char const* row2, char const* row3, char const* row4, char const* row5) {

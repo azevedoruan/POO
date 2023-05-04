@@ -9,6 +9,7 @@ enum Control { EQUAL, DECIMAL_SEPARATOR, CLEAR_ERROR, OFF, MEMORY_READ_CLEAR, ME
 typedef char const* Symbol;
 
 class Key;
+class Cpu;
 class Keyboard {
    public:
     virtual void receive(Digit) = 0;
@@ -24,8 +25,8 @@ class Keyboard {
 
 class Key {
    public:
-    virtual void press(const char) = 0;
-    virtual char const *getSymbol() = 0;
+    virtual void press() = 0;
+    virtual Symbol getSymbol() = 0;
     virtual void setKeyboard(Keyboard *) = 0;
 };
 
@@ -60,17 +61,8 @@ class Cpu {
     virtual void setDisplay(Display*) = 0;
 };
 
-/* Responsabilidade: montar uma calculadora */
 class Calculator {
-   private:
-    Display *display;
-    Cpu *cpu;
-    Keyboard *keyboard;
-
-   public:
-    Calculator();
-    Calculator(Display *, Cpu *, Keyboard *);
-    ~Calculator();
+  public:
     virtual void setDisplay(Display*) = 0;
     virtual Display* getDisplay() = 0;
     virtual void setCpu(Cpu*) = 0;
@@ -82,7 +74,6 @@ class Calculator {
 class CalculatorError {
    protected:
     char const *message;
-
    public:
     CalculatorError(char const *);
     virtual char const *getMessage();
