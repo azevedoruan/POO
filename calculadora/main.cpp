@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 #include "Calculator.hpp"
-#include "DisplayRuan.hpp"
+//#include "DisplayRuan.hpp"
+#include "EliasDisplay.hpp"
 #include "CpuRuan.hpp"
 #include "KeyboardRuan.hpp"
 #include "KeyRuan.hpp"
@@ -10,7 +11,7 @@
 
 void calculatorTest() {
     CpuRuan cpu;
-    DisplayRuan display;
+    DisplayElias display;
     KeyboardRuan keyboard;
     KeyDigitRuan key0("0", Digit::ZERO);
     KeyDigitRuan key1("1", Digit::ONE);
@@ -20,7 +21,7 @@ void calculatorTest() {
     KeyDigitRuan key5("5", Digit::FIVE);
     KeyDigitRuan key6("6", Digit::SIX);
     KeyDigitRuan key7("7", Digit::SEVEN);
-    KeyDigitRuan key8("8", Digit::EIGTH);
+    KeyDigitRuan key8("8", Digit::EIGHT);
     KeyDigitRuan key9("9", Digit::NINE);
     KeyOperatorRuan keySum("+", Operator::SUM);
     KeyOperatorRuan keySub("-", Operator::SUBTRACTION);
@@ -52,12 +53,10 @@ void calculatorTest() {
     calculator.setDisplay(&display);
     calculator.setKeyboard(&keyboard);
 
-    calculator.getKeyboard()->getKey("4")->press();
-    calculator.getKeyboard()->getKey("*")->press();
-    calculator.getKeyboard()->getKey("0")->press();
-    calculator.getKeyboard()->getKey("+")->press();
+    calculator.getKeyboard()->getKey("2")->press();
+    calculator.getKeyboard()->getKey("-")->press();
     calculator.getKeyboard()->getKey("1")->press();
-    calculator.getKeyboard()->getKey("4")->press();
+    calculator.getKeyboard()->getKey("0")->press();
     calculator.getKeyboard()->getKey("=")->press();
 }
 

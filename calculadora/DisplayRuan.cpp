@@ -6,7 +6,7 @@ DisplayRuan::DisplayRuan() {
 
 DisplayRuan::~DisplayRuan() {}
 
-void DisplayRuan::addDigit(Digit digit) {
+void DisplayRuan::add(Digit digit) {
     if (currentPos >= MAX_CHARACTERS)
         return;
         
@@ -39,7 +39,7 @@ void DisplayRuan::addDigit(Digit digit) {
             case Digit::SEVEN:
                 printDigit(pos, "▇▇▇▇", "   ▇", "   ▇", "   ▇", "   ▇");
                 break;
-            case Digit::EIGTH:
+            case Digit::EIGHT:
                 printDigit(pos, "▇▇▇▇", "▇  ▇", "▇▇▇▇", "▇  ▇", "▇▇▇▇");
                 break;
             case Digit::NINE:

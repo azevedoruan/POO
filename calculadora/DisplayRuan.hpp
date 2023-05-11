@@ -16,7 +16,7 @@ private:
 public:
     DisplayRuan();
     ~DisplayRuan();
-    void addDigit(Digit);
+    void add(Digit);
     void setSignal(Signal);
     void addDecimalSeparator();
     void clear();

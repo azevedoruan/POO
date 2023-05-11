@@ -42,7 +42,7 @@ void CpuRuan::addDigitInExpressionA(Digit digit) {
 
     if (aCount < MAX_CHARACTERS) {
         a[aCount++] = digit;
-        display->addDigit(digit);
+        display->add(digit);
     }
 }
 
@@ -52,7 +52,7 @@ void CpuRuan::addDigitInExpressionB(Digit digit) {
 
     if (bCount < MAX_CHARACTERS) {
         b[bCount++] = digit;
-        display->addDigit(digit);
+        display->add(digit);
     }
 }
 
